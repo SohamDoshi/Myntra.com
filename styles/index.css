@@ -1,0 +1,56 @@
+#deal_banner>img{
+   width:100%;
+    
+}
+#deal_banner{
+width: 100%;
+
+}
+#unbelievable_deal{
+   
+    display:flex;
+}
+#unbelievable_deal>div>a>img{
+    width:100%;
+    padding-right:135px;
+}
+
+#top_brandsoffer{
+    display:flex;
+}
+#top_brandsoffer>div>a>img{
+    width:100%;
+    padding-right:135px;
+}
+
+#most_lovedbrands{
+    display:flex;
+}
+#most_lovedbrands>div>a>img{
+    width:100%;
+}
+#category1{
+    display:flex;
+    border:1px solid red
+}
+
+#category2{
+    display:flex;
+    border:1px solid red;
+}
+#category2>div>a>img{
+    width:100%;
+    padding-right: 125px;;
+    
+}
+h1{
+    text-align: center;
+   
+}
+h2{
+    text-align: center;
+    
+}
+.link{
+    text-decoration: none;
+}
