@@ -1,49 +1,4 @@
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': 'd277b5e1edmsh1553c6a2df9d195p1474b7jsn51cbcf6d4dff',
-// 		'X-RapidAPI-Host': 'asos2.p.rapidapi.com'
-// 	}
-// };
-
-// fetch('https://asos2.p.rapidapi.com/v2/auto-complete?q=bikini%20top&lang=en-US&sizeSchema=US&currency=USD&country=US&store=US', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-
 document.getElementById("add").addEventListener("click",addProduct)
-
-let data = [];
-
-function Product (n,c,i,p,g,s){
-    this.name=n;
-    this.category=c;
-    this.image=i;
-    this.price=p;
-    this.gender=g;
-    this.sold = s;
-}
-
-function addProduct (e){
-    e.preventDefault()
-    let form = document.querySelector("form");
-    let name= form.name.value;
-    let category = form.category.value;
-    let image = form.image.value;
-    let price = form.price.value
-    let gender = form.gender.value;
-    let sold = false;
-    let add = new Product (name,category,image,price,gender,sold);
-
-    // let data = [];
-    data.push(add);
-    console.log(data)
-    // localStorage.setItem("Products",JSON.stringify(data));
-}
-
-console.log(data)
-
-
 let x =[
     {
       "name": "U.S. Polo Assn",
@@ -247,5 +202,57 @@ let x =[
       }
   ]
 
-  console.log(x)
+let data = [];
 
+function Product (n,c,i,p,g,s){
+    this.name=n;
+    this.category=c;
+    this.image=i;
+    this.price=p;
+    this.gender=g;
+    this.sold = s;
+}
+
+function addProduct (e){
+    e.preventDefault()
+    let form = document.querySelector("form");
+    let name= form.name.value;
+    let category = form.category.value;
+    let image = form.image.value;
+    let price = form.price.value
+    let gender = form.gender.value;
+    let sold = false;
+    let add = new Product (name,category,image,price,gender,sold);
+
+    // let data = [];
+    data.push(add);
+    console.log(data)
+    // localStorage.setItem("Products",JSON.stringify(data));
+}
+
+console.log(data);
+
+let append =()=>{
+  let cont = document.createElement("div")
+
+  data.forEach((el)=>{
+    let img = document.createElement('img')
+    img.src = el.image;
+
+    let title = document.createElement('h3')
+    title.innerText = el.name;
+
+    let price = document.createElement('p')
+    price.innerText = el.price;
+
+    let btn = document.createElement('button')
+    btn.id = "addToCart";
+    btn.addEventListener('click',function(){
+      addToCart(el)
+    })
+  })
+}
+
+let addToCart=(el)=>{
+  
+}
