@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/52e32f6bd0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./footer.css">
     <title>Document</title>
 </head>
 <style>
     body{
         font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
     }
     #sort{
         width: 250px;
@@ -30,12 +35,23 @@
         margin-left: 10%;
        width: fit-content;
        margin-bottom: -40px; 
+       line-height: 1px;
+    }
+    #heading > p{
+        font-size: 17px;
+        font-weight: 700;
+    }
+    #heading >P>font{
+        font-size: 17px;
+        line-height: 1;
+        font-weight: 100;
     }
     #maincontainer{
         width: 80%;
         margin: auto;
         display: flex;
         border-top: 1px solid #999;
+        z-index: -999;
     }
     #filter{
         height: fit-content;
@@ -93,7 +109,7 @@
         margin-top: -27px;
         font-size: 12px;
         background-color: #f1f1f1c0;
-        z-index: 99;
+        /* z-index: 99; */
         font-weight: 600;
     }
     #rating > i{
@@ -172,6 +188,7 @@
     }
 </style>
 <body>
+    <div id="navbar1"></div>
     <!-- <form>
         <input type="text" id="name" placeholder="Product Name">
         <input type="text" id="category" placeholder="Category">
@@ -185,7 +202,9 @@
         <button id="sold" value="sold">Sold</button>
         <button id="add">Submit</button>
     </form> -->
-    <div id='heading'><h4>Filters</h4></div>
+    <div id='heading'>
+        <p></p>
+        <h4>Filters</h4></div>
     <div id="sort">
         Sort by : <select name="#" id="short">
             <option value="recom">Recommended</option>
@@ -252,6 +271,8 @@
             <button>Next ></button>
         </div>
     </div>
+    <div id="feeter"></div>
 </body>
 </html>
 <script src="./mens.js"></script>
+<script src="./IMnavbar.js" type="module"></script>
