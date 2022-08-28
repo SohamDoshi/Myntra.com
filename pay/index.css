@@ -1,0 +1,60 @@
+.body{
+    display: flex;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 1000px;
+    margin: auto;
+    margin-top: 100px;
+}
+.details{
+    padding: 10px;
+    padding-left: 50px;
+}
+.rightb{
+    margin-left: 20px;
+    padding: 10px;
+    border-left: 1px solid #d4d5d9;
+}
+.merchant__details{
+    color: #164c92;
+    font-weight: 600;
+    font-size: 25px;
+}
+.rightb>p:first-child{
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: #164c92;
+    font-weight: 600;
+}
+.rightb>p:nth-child(2){
+    color: #669e5c;
+    background: #ecf5ea;
+    border: 1px solid #a2ce9b;
+    padding: 4px;
+    padding-left: 40px;
+    padding-right: 40px;
+    line-height: 1.6cm;
+    border-radius: 2px;
+    text-align: center;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+.rightb>input{
+    width: 90%;
+    height: 30px;
+    margin-bottom: 20px;
+    margin-left: 5%;
+}
+.rightb>button{
+    width: 90%;
+    text-align: center;
+    background: #ff3f6c;
+    color: #fff;
+    font-weight:600;
+    font-size: 14px;
+    line-height: 48px;
+    border-radius: 4px;
+    border: none;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
