@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles/login.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="banner">
+            <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2022/8/23/fcfd9b29-41c9-443c-b17a-38f43e37dd5c1661232075382-offer-banner-300-600x240-code-_-MYNTRA300.jpg" alt="">
+        </div>
+        <div id="input">
+            <h2 id="head">Login or Signup</h2>
+            <form id="form" action="">
+                <input id="mob_num" type="text" placeholder="+91 | Mobile Number"> <br>
+                <h2>By continuing,i agree ot the Terms of use &  Privacy Policy</h2> <br>
+                <input id="button" type="submit" value="Continue">
+            </form>
+           
+        </div>
+       
+    </div>
+   
+</body>
+</html>
+<script>
+   Acntarr=JSON.parse(localStorage.getItem("accountdetail"))||[];
+console.log(Acntarr);
+document.querySelector("#button").addEventListener("click",funct);
+
+function funct(event){ 
+ event.preventDefault();
+console.log("inner");
+
+    let acntdata={
+        number:document.querySelector("#mob_num").value,
+    }
+ Acntarr.push(acntdata);
+ console.log(Acntarr)
+localStorage.setItem("accountdetail",JSON.stringify(Acntarr))
+// window.location.href="confirm.html"
+}
+// document.querySelector("#submit").addEventListener("click",funct2);
+//  function funct2(event){
+//     event.preventDefault();
+//     // console.log("email")
+//     window.location.href="signup.html";
+//  }
+</script>

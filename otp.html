@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="./styles/login.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/login.css">
+</head>
+<body>
+    <div id="container">
+        <div id="banner">
+            <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2022/8/23/fcfd9b29-41c9-443c-b17a-38f43e37dd5c1661232075382-offer-banner-300-600x240-code-_-MYNTRA300.jpg" alt="">
+        </div>
+        <div id="input">
+            <h2 id="head">Login or Signup</h2>
+            <form id="form" action="">
+                <input id="password" type="password" placeholder="Enter OTP"> <br>
+                <h2>By continuing,i agree ot the Terms of use &  Privacy Policy</h2> <br>
+                <input id="button" type="submit" value="Continue">
+            </form>
+           
+        </div>
+       
+    </div>
+   
+</body>
+</html>
+<script>
+    document.querySelector("#form").addEventListener("submit",confirm);
+ function confirm(event){
+    event.preventDefault();
+    let otp=document.querySelector("#password").value;
+    if(otp==="123456"){
+        alert("You are succesfully login👌👌");
+
+        
+        window.location.href="index.html"
+
+    }
+    else{
+        alert("Enter valid otp");
+    }
+ }
+</script>
