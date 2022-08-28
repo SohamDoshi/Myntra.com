@@ -338,7 +338,7 @@ let append = (data) => {
     title.innerText = el.name;
 
     let dis = document.createElement('p')
-    dis.innerText = el.category
+    dis.innerText = el.desc
 
     let price = document.createElement('p')
     let disc = discount(el.price, el.mrp);
