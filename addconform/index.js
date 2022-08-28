@@ -26,7 +26,7 @@ function home() {
     let ttl = document.getElementById('ttl');
     let con = document.getElementById('con');
     let amont = document.getElementById('amont');
-    let arr = JSON.parse(localStorage.getItem('data'));
+    let arr = JSON.parse(localStorage.getItem('bag'));
     console.log('length:', arr.length, arr)
     let m = 0;
     arr.forEach(({ price }) => {
@@ -55,11 +55,16 @@ function home() {
     amont.append(p3, p33);
     let main = document.querySelector('.rightbody');
     let div = document.createElement('button');
-    div.innerText= "CONTINUE";
-    div.setAttribute('class','but')
+    div.innerText = "CONTINUE";
+    div.setAttribute('class', 'but')
+    div.addEventListener('click', nex);
     main.append(div)
 }
 function back() {
-window.location.href="../address/index.html"
+    window.location.href = "../address/index.html"
 
+}
+
+function nex() {
+    window.location.href = "../payment/index.html"
 }

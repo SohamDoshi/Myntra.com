@@ -106,18 +106,24 @@
         </div>
          <div class="right">
             <p>CREDIT/ DEBIT CARD</p>
-            <input type="text" placeholder="Card Number">
+            <input id="num" type="text" placeholder="Card Number">
             <br>
-            <input type="text" placeholder="Name on card">
+            <input id="name" type="text" placeholder="Name on card">
             <div class="valid">
-                <input type="text" placeholder="Valid Thru...">
-                <input type="text" placeholder="CVV">
+                <input type="date" placeholder="Valid Thru...">
+                <input type="password" placeholder="CVV">
             </div>
-           <button>PAY NOW</button>
+           <button onclick="paynow()" >PAY NOW</button>
         </div>
         </div>
     </div>
-    //left body//
+    <div class="rightbody">
+        <div id="price"></div>
+        <div id="ttl"></div>
+        <div id="con"></div>
+        <hr>
+        <div id="amont"></div>
+      </div>
 </div>
     <div class="content"> <div class="images"> <img class="footer-bank-ssl" src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ssl.png" width="70" height="37"> <img class="footer-bank-visa" src="https://constant.myntassets.com/checkout/assets/img/footer-bank-visa.png" width="60" height="37"> <img class="footer-bank-mc" src="https://constant.myntassets.com/checkout/assets/img/footer-bank-mc.png" width="60" height="37"> <img class="footer-bank-ae" src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ae.png" width="60" height="37"> <img class="footer-bank-dc" src="https://constant.myntassets.com/checkout/assets/img/footer-bank-dc.png" width="60" height="37"> <img class="footer-bank-nb" src="https://constant.myntassets.com/checkout/assets/img/footer-bank-nb.png" width="60" height="37"> <img class="footer-bank-cod" src="https://constant.myntassets.com/checkout/assets/img/footer-bank-cod.png" width="60" height="37"> <img class="footer-bank-rupay" src="https://constant.myntassets.com/checkout/assets/img/footer-bank-rupay.png" width="60" height="37"> <img class="footer-bank-paypal" src="https://constant.myntassets.com/checkout/assets/img/footer-bank-paypal.png" width="60" height="37"> <img class="footer-bank-bhim" src="https://constant.myntassets.com/checkout/assets/img/footer-bank-bhim.png" width="60" height="37"> </div> <p class="contact-us"> <span>Need Help ? Contact Us</span> </p> </div>
 </body>

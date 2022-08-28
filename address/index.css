@@ -177,3 +177,13 @@ hr{
 .leftbody>button{
     margin-top: 10px;
 }
+
+.content{
+    display: flex;
+    margin-left: 210px;
+    margin-right: 50px;
+    margin-top: 60px;
+}
+.content>p{
+    margin-left: 200px;
+}
