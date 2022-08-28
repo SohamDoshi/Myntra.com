@@ -4,10 +4,275 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/52e32f6bd0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./footer.css">
     <title>Document</title>
 </head>
+<style>
+    body{
+        font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    #sort{
+        width: 250px;
+        padding: 5px 8px;
+        margin-left: 70%;
+        border: 1px solid rgba(153, 153, 153, 0.678);
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+    #sort>select{
+        width: 185px;
+        border: none;
+        background-color: transparent;
+        font-size: 14px;
+        font-weight: 700;
+    }
+    #heading{
+        margin-left: 10%;
+       width: fit-content;
+       margin-bottom: -40px; 
+       line-height: 1px;
+    }
+    #heading > p{
+        font-size: 17px;
+        font-weight: 700;
+    }
+    #heading >P>font{
+        font-size: 17px;
+        line-height: 1;
+        font-weight: 100;
+    }
+    #maincontainer{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        border-top: 1px solid #999;
+        z-index: -999;
+    }
+    #filter{
+        height: fit-content;
+        width: 18%;
+        border-right: 1px solid #999;
+    }
+    #container {
+        width: auto;
+        margin: 20px;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 20px;
+        text-align: center;
+        border-bottom: 1px solid #999;
+    }
+    .product{
+        width: 210px;
+        height: fit-content;
+        padding: 5px;
+        line-height: 0px;
+    }
+    .product > h3+p{
+        color: #535766;
+        font-size: 14px;
+        line-height: 1;
+    }
+    .product > p+p{
+        color: #282c3f;
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 700;
+    }
+    .product > p+p> del{
+        color: #282c3f;
+        font-size: 14px;
+        line-height: 1;
+        font-weight: 100;
+    }
+    .product > p+p> font{
+        font-size: 11px;
+        line-height: 1;
+        font-weight: 100;
+    }
+    .product > img{
+        width: 210px;
+        height: 280px;
+        position: relative;
+        z-index: -10;
+    }
+    .product > #rating{
+        width: fit-content;
+        height: fit-content;
+        margin-left: 5px;
+        padding: 5px;
+        margin-top: -27px;
+        font-size: 12px;
+        background-color: #f1f1f1c0;
+        /* z-index: 99; */
+        font-weight: 600;
+    }
+    #rating > i{
+        color: #1c9d97;
+    }
+    #addtocart,#addtowish{
+        width: 100%;
+        color: #fff;
+        background-color: #ff3e6c;
+        border: none;
+        margin-top: 5px;
+        font-size: 18px;
+        padding: 5px 0px;
+        border-radius: 5px;
+    }
+    #addtocart,#addtowish {
+    display: none;
+    }
+    .product:hover > #addtocart, #addtocart:hover {
+        display: inline-block;
+    }
+    .product:hover{
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    .product:hover > p {
+        display: none;
+    }
+    .product:hover > #addtowish, #addtowish:hover {
+        display: inline-block;
+    }
+    .catagory,.brands,.price,.dicount{
+        margin: 10px 0px 10px 10px;
+        font-size: 14px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #999;
+    }
+    #pagenation{
+        width: max-content;
+        margin: auto;
+        display: flex;
+    }
+    #pagenation >button{
+        background-color: transparent;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        font-weight: 700;
+        margin-left: 15px;
+        padding: 5px;
+    }
+    #pagenation >button:active, #pagenation >button.active{
+        background-color: #282c3f;
+        color: #fff;
+        outline: none;
+        border: none;
+    }
+    #pagenation >button:focus{
+        background-color: #282c3f;
+        color: #fff;
+        outline: none;
+        border: none;
+    }
+    #prev>button,#nex>button{
+        border: none;
+        background-color: transparent;
+        border: 1px solid rgba(153, 153, 153, 0.568);
+        font-size: 16px;
+        font-weight: 600;
+        padding: 10px 20px;
+    }
+    #prev>button{
+        margin-right: 50px;
+    }
+    #nex>button{
+        margin-left: 50px;
+    }
+</style>
 <body>
-    <input type="text">
-    <button>asdsf</button>
+    <div id="navbar1"></div>
+    <!-- <form>
+        <input type="text" id="name" placeholder="Product Name">
+        <input type="text" id="category" placeholder="Category">
+        <input type="text" id="image" placeholder="Image Url">
+        <input type="text" id="price" placeholder="Price">
+        <select name="Gender" id="gender">
+            <option value="A">Select Gender</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select> 
+        <button id="sold" value="sold">Sold</button>
+        <button id="add">Submit</button>
+    </form> -->
+    <div id='heading'>
+        <p></p>
+        <h4>Filters</h4></div>
+    <div id="sort">
+        Sort by : <select name="#" id="short">
+            <option value="recom">Recommended</option>
+            <option value="new">What's New</option>
+            <option value="popl">Popularity</option>
+            <option value="dis">Better DISCOUNT</option>
+            <option value="ltoh">Price: Low to High</option>
+            <option value="htol">Price: High to Low</option>
+            <option value="customer">Customer Rating</option>
+        </select>
+    </div>
+    <div id="maincontainer">
+        <div id="filter">
+            <div class="catagory">
+                <h5>CATEGORIES</h5>
+                <input type="checkbox"> Tshirts <br>
+                <input type="checkbox"> Lounge Tshirtsbr <br>
+            </div>
+            <div class="brands">
+                <h5>BRAND</h5>
+                <input type="checkbox" onchange="brands(value)" id="Roadster" value="Roadster"> Roadster <br>
+                <input type="checkbox" onchange="brands(value)" id="Kalt" value="Kalt"> Kalt <br>
+                <input type="checkbox" onchange="brands(value)" id="WRONG" value="WRONG"> WRONG <br>
+                <input type="checkbox" onchange="brands(value)" id="Friskers" value="Friskers"> Friskers <br>
+                <input type="checkbox" onchange="brands(value)" id="HRX by Hrithik Roshan" value="HRX by Hrithik Roshan"> HRX by Hrithik Roshan <br>
+                <input type="checkbox" onchange="brands(value)" id="Puma" value="Puma"> Puma <br>
+                <input type="checkbox" onchange="brands(value)" id="Huetrap" value="Huetrap"> Huetrap <br>
+                <input type="checkbox" onchange="brands(value)" id="U.S. Polo Assn" value="U.S. Polo Assn"> U.S. Polo Assn <br>
+            </div>
+            <div class="price">
+                <h5>PRICE</h5>
+                <input type="checkbox" id="199" value="2397" onchange="priceRange(id,value)"> Rs. 199 to Rs. 2397 <br>
+                <input type="checkbox" id="2397" value="4595" onchange="priceRange(id,value)"> Rs. 2397 to Rs. 4595 <br>
+                <input type="checkbox" id="4595" value="6793" onchange="priceRange(id,value)"> Rs. 4595 to Rs. 6793 <br>
+                <input type="checkbox" id="6793" value="8991" onchange="priceRange(id,value)"> Rs. 6793 to Rs. 8991 <br>
+            </div>
+            <div class="dicount">
+                <h5>DISCOUNT RANGE</h5>
+                <input type="checkbox" id="10" value="10" onchange="discountRange(value)"> 10% and above <br>
+                <input type="checkbox" id="20" value="20" onchange="discountRange(value)"> 20% and above <br>
+                <input type="checkbox" id="30" value="30" onchange="discountRange(value)"> 30% and above <br>
+                <input type="checkbox" id="40" value="40" onchange="discountRange(value)"> 40% and above <br>
+                <input type="checkbox" id="50" value="50" onchange="discountRange(value)"> 50% and above <br>
+                <input type="checkbox" id="60" value="60" onchange="discountRange(value)"> 60% and above <br>
+                <input type="checkbox" id="70" value="70" onchange="discountRange(value)"> 70% and above <br>
+                <input type="checkbox" id="80" value="80" onchange="discountRange(value)"> 80% and above <br>
+            </div>
+        </div>
+        <div id="container"></div>
+    </div>
+    <div id="pagenation">
+        <div id="prev">
+            <button> < Previous </button>
+        </div>
+        <button id="1" onclick="mainPagenation(id)">1</button>
+        <button id="2" onclick="mainPagenation(id)">2</button>
+        <button id="3" onclick="mainPagenation(id)">3</button>
+        <button id="4" onclick="mainPagenation(id)">4</button>
+        <button id="5" onclick="mainPagenation(id)">5</button>
+        <button id="6" onclick="mainPagenation(id)">6</button>
+        <button id="7" onclick="mainPagenation(id)">7</button>
+        <button id="8" onclick="mainPagenation(id)">8</button>
+        <div id="nex">
+            <button>Next ></button>
+        </div>
+    </div>
+    <div id="feeter"></div>
 </body>
 </html>
+<script src="./mens.js"></script>
+<script src="./IMnavbar.js" type="module"></script>
