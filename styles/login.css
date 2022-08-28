@@ -1,0 +1,33 @@
+#banner{
+    width:32%;
+   margin:auto;
+  
+}
+#input{
+   
+    width:32%;
+    margin:auto;
+}
+#form{
+    width:90%;
+    margin-left:50px;
+}
+#mob_num{
+    width:90%;
+    padding:10px 0px 10px 0px;
+}
+#password{
+    width:90%;
+    padding:10px 0px 10px 0px;
+    text-align: center;
+    font-size: 15px;
+}
+#head{
+    margin-left:50px;
+}
+#button{
+    width:90%;
+    padding:10px 0px 10px 0px;
+    background-color: #ff3f6c;
+    border:none;
+}

@@ -23,6 +23,12 @@ function fun() {
 }
 window.addEventListener('load', appen)
 
+let discount = (price, mrp) => {
+    let div = +price / +mrp
+    let per = Math.floor(100 - (div * 100))
+    return per
+  }
+
 function appen() {
     let arr = JSON.parse(localStorage.getItem('bag'))
     let main = document.querySelector('.fetch');
@@ -48,18 +54,23 @@ function appen() {
         let s = document.createElement('select');
         let op = document.createElement('option');
         op.innerText = `Qty:${1}`;
+        op.id ="1";
         let op1 = document.createElement('option');
         op1.innerText = `Qty:${2}`;
+        op1.id ="2";
         let op2 = document.createElement('option');
         op2.innerText = `Qty:${3}`;
+        op2.id ="3";
         let op3 = document.createElement('option');
         op3.innerText = `Qty:${4}`;
+        op3.id ="4";
         let op4 = document.createElement('option');
         op4.innerText = `Qty:${5}`;
+        op4.id ="5";
         s.append(op, op1, op2, op3, op4);
         s.setAttribute('class', 'sele')
         s.addEventListener('change', function () {
-            ch(el)
+            ch(el,this.id)
         })
 
         butdi.append(but, s);
@@ -67,9 +78,9 @@ function appen() {
         let price = document.createElement('p');
         price.innerText = `₹${el.price}`;
         let drop = document.createElement('p');
-        drop.innerText = el.MRP;
+        drop.innerText = el.mrp;
         let dis = document.createElement('p');
-        dis.innerText = `${el.off}% OFF`;
+        dis.innerText = `${discount(el.price,el.mrp)}% OFF`;
         off.append(price, drop, dis);
         di.append(p, p1, p2, butdi, off);
         let news = document.createElement('div');
@@ -87,7 +98,7 @@ function appen() {
 let removes = (i) => {
     event.target.parentNode.remove();
     console.log(i);
-    let data = JSON.parse(localStorage.getItem('bag'));
+    let data = JSON.parse(localStorage.getItem('bag')) || [];
     data.splice(i, 1)
     localStorage.setItem('bag', JSON.stringify(data));
     append()
@@ -113,9 +124,9 @@ let append = () => {
     let Totalprice = 0;
     let amount = 0;
     let disc;
-    arr.forEach(({ price, MRP }) => {
+    arr.forEach(({ price, mrp }) => {
         let x = Number(price);
-        let y = Number(MRP);
+        let y = Number(mrp);
         Totalprice += x;
         amount += y;
     })
@@ -143,15 +154,18 @@ let append = () => {
     total.append(p44, p4)
 }
 
-function ch(el) {
+function ch(el,id) {
 
-    let arr = JSON.parse(localStorage.getItem('bag'));
+    let arr = JSON.parse(localStorage.getItem('bag')) || [];
     let sele = document.querySelector('.sele').value;
     sele = sele.split(":");
     sele = Number(sele[1]);
     for (let i = 0; i < sele; i++) {
         arr.push(el)
     }
+    // let p = el.price;
+    // let q = +id;
+    // total = 0;
     localStorage.setItem('bag', JSON.stringify(arr))
     append()
 

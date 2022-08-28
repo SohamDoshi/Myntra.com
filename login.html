@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="./navbar.css">
     <title>Document</title>
 </head>
 <body>
+    <div id="navbar1"></div>
     <div id="container">
         <div id="banner">
             <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2022/8/23/fcfd9b29-41c9-443c-b17a-38f43e37dd5c1661232075382-offer-banner-300-600x240-code-_-MYNTRA300.jpg" alt="">
@@ -15,7 +18,7 @@
         <div id="input">
             <h2 id="head">Login or Signup</h2>
             <form id="form" action="">
-                <input id="mob_num" type="text" placeholder="+91 | Mobile Number"> <br>
+                <input id="mob_num" type="number" placeholder="+91 | Mobile Number " required> <br>
                 <h2>By continuing,i agree ot the Terms of use &  Privacy Policy</h2> <br>
                 <input id="button" type="submit" value="Continue">
             </form>
@@ -23,7 +26,7 @@
         </div>
        
     </div>
-   
+   <div id="feeter"></div>
 </body>
 </html>
 <script>
@@ -43,6 +46,12 @@ console.log("inner");
 localStorage.setItem("accountdetail",JSON.stringify(Acntarr))
 // window.location.href="confirm.html"
 }
+
+let optLinl =()=>{
+    window.location.href = "otp.html"
+}
+
+document.getElementById('button').addEventListener("click",optLinl)
 // document.querySelector("#submit").addEventListener("click",funct2);
 //  function funct2(event){
 //     event.preventDefault();
@@ -50,3 +59,4 @@ localStorage.setItem("accountdetail",JSON.stringify(Acntarr))
 //     window.location.href="signup.html";
 //  }
 </script>
+<script src="IMnavbar.js" type="module"></script>
