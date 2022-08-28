@@ -266,6 +266,8 @@ let reviwe = (n) => {
 }
 console.log(data);
 
+document.querySelector('#heading>p').innerHTML = `Men-Tshirts - <font color="#999">${x.length} items</font>`
+
 let append = (data) => {
   let cont = document.getElementById('container')
   cont.innerHTML = null;
